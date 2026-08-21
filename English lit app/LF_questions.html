@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Macbeth</title>
+        <link rel="stylesheet" href="button.styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+
+</head>
+<body>
+    <div class="top-bar">
+        <a href="homepage.html">
+        <button class="button2"><span class="material-symbols-outlined">home</span></button>
+        </a> 
+        <h1 class="h1">Lord of the FLies practice questions</h1>
+    </div>
+
+    <div class="content">
+
+    <div class="progress-section">
+        <h2>Practice question progress</h2>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <p id="progress-text">0 / 12 completed</p>
+    </div>
+
+
+    <div class="question">
+        <h1>2018</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2018-simon">
+            <span>How does Golding present Simon as different from the other boys on the island? [30 marks + 4 AO4]</span>
+        </label>
+
+        <p>OR</p>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2018-beast">
+            <span>'The head is for the Beast. It's a gift.' How does Golding present the importance of the Beast to different characters in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2019</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2019-piggy">
+            <span>How far does Golding present Piggy as a character with useful and important ideas in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+
+        <p>OR</p>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2019-society">
+            <span>In chapter 8 of Lord of the Flies Ralph asks, 'What makes things break up like they do?'. How does Golding present the reasons why society on the island breaks up? [30 marks + 4 AO4]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2020</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2020-jack">
+            <span>How far does Golding present Jack as a character who changes in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+
+        <p>OR</p>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2020-island">
+            <span>How far does Golding present the island as a dangerous place? [30 marks + 4 AO4]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2023</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2023-ralph">
+            <span>How far does Golding present Ralph as a strong character in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+
+        <p>OR</p>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2023-violence">
+            <span>How does Golding present violence and its effects in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2024</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2024-leadership">
+            <span>How does Golding present ideas about leadership in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+
+        <p>OR</p>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-2024-littluns">
+            <span>How does Golding use the Littluns to explore ideas about trust and fear in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>Specimen</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-specimen-piggy">
+            <span>Do you think Piggy is an important character in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+
+        <p>OR</p>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="lotf-specimen-beast">
+            <span>What do you think is the importance of the 'beast' in Lord of the Flies? [30 marks + 4 AO4]</span>
+        </label>
+    </div>
+
+</div>
+
+        
+
+    <script>
+    const checkboxes = document.querySelectorAll(".question-checkbox");
+    const progressFill = document.getElementById("progress-fill");
+    const progressText = document.getElementById("progress-text");
+
+    function updateProgress() {
+
+        let completed = 0;
+
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                completed++;
+            }
+        });
+
+        const total = checkboxes.length;
+        const percentage = (completed / total) * 100;
+
+        progressFill.style.width = percentage + "%";
+        progressText.textContent = `${completed} / ${total} completed`;
+    }
+
+
+    checkboxes.forEach(checkbox => {
+
+        // Load saved progress
+        const saved = localStorage.getItem(checkbox.id);
+
+        if (saved === "true") {
+            checkbox.checked = true;
+        }
+
+        // Save progress when clicked
+        checkbox.addEventListener("change", () => {
+
+            localStorage.setItem(
+                checkbox.id,
+                checkbox.checked
+            );
+
+            updateProgress();
+        });
+    });
+
+
+    // Update progress when page loads
+    updateProgress();
+</script>
+</body>

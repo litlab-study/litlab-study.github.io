@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Macbeth</title>
+        <link rel="stylesheet" href="button.styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+
+</head>
+<body>
+    <div class="top-bar">
+        <a href="homepage.html">
+        <button class="button2"><span class="material-symbols-outlined">home</span></button>
+        </a> 
+        <h1 class="h1">Macbeth practice questions</h1>
+    </div>
+    <div class="content">
+
+    <div class="progress-section">
+        <h2>Practice question progress</h2>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <p id="progress-text">0 / 7 completed</p>
+    </div>
+
+
+    <div class="question">
+        <h1>2017</h1>
+        <label>
+            <input type="checkbox" class="question-checkbox" id="macbeth-2017">
+            <span>Extract from Act 1 Scene 5. Starting with this speech, explore how Shakespeare presents ambition in Macbeth. [30 marks + 4 AO4 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2018</h1>
+        <label>
+            <input type="checkbox" class="question-checkbox" id="macbeth-2018">
+            <span>Extract from Act 1 Scene 3. Starting with this moment in the play, explore how Shakespeare presents the attitudes of Macbeth and Banquo towards the supernatural. [30 marks + 4 AO4 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2019</h1>
+        <label>
+            <input type="checkbox" class="question-checkbox" id="macbeth-2019">
+            <span>Extract from Act 1 Scene 2. Starting with this speech, explore how far Shakespeare presents Macbeth as a violent character. [30 marks + 4 AO4 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2020</h1>
+        <label>
+            <input type="checkbox" class="question-checkbox" id="macbeth-2020">
+            <span>Extract from Act 5 Scene 1. 'Lady Macbeth is a female character who changes during the play.' Starting with this moment in the play, explore how far you agree with this view. [30 marks + 4 AO4 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2023</h1>
+        <label>
+            <input type="checkbox" class="question-checkbox" id="macbeth-2023">
+            <span>Extract from Act 5 Scene 3. Starting with this conversation, explore how far Shakespeare presents Macbeth as a male character who changes during the play. [30 marks + 4 AO4 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2024</h1>
+        <label>
+            <input type="checkbox" class="question-checkbox" id="macbeth-2024">
+            <span>Extract from Act 1 Scene 7. Starting with this conversation, explore how far Shakespeare presents Lady Macbeth as a strong female character. [30 marks + 4 AO4 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>Specimen</h1>
+        <label>
+            <input type="checkbox" class="question-checkbox" id="macbeth-specimen">
+            <span>Extract from Act 1 Scene 5. Starting with this speech, explore how far you think Shakespeare presents Lady Macbeth as a powerful woman. [30 marks + 4 AO4 marks]</span>
+        </label>
+    </div>
+
+</div>
+<script>
+    const checkboxes = document.querySelectorAll(".question-checkbox");
+    const progressFill = document.getElementById("progress-fill");
+    const progressText = document.getElementById("progress-text");
+
+    function updateProgress() {
+
+        let completed = 0;
+
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                completed++;
+            }
+        });
+
+        const total = checkboxes.length;
+        const percentage = (completed / total) * 100;
+
+        progressFill.style.width = percentage + "%";
+        progressText.textContent = `${completed} / ${total} completed`;
+    }
+
+
+    checkboxes.forEach(checkbox => {
+
+        // Load saved progress
+        const saved = localStorage.getItem(checkbox.id);
+
+        if (saved === "true") {
+            checkbox.checked = true;
+        }
+
+        // Save progress when clicked
+        checkbox.addEventListener("change", () => {
+
+            localStorage.setItem(
+                checkbox.id,
+                checkbox.checked
+            );
+
+            updateProgress();
+        });
+    });
+
+
+    // Update progress when page loads
+    updateProgress();
+</script>
+</body>

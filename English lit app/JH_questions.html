@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JH</title>
+        <link rel="stylesheet" href="button.styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+
+</head>
+<body>
+    <div class="top-bar">
+        <a href="homepage.html">
+        <button class="button2"><span class="material-symbols-outlined">home</span></button>
+        </a> 
+        <h1 class="h1">Jekyll and Hyde practice questions</h1>
+    </div>
+    
+    <div class="content">
+
+    <div class="progress-section">
+        <h2>Practice question progress</h2>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <p id="progress-text">0 / 9 completed</p>
+    </div>
+
+
+    <div class="question">
+        <h1>2017</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2017">
+            <span>Extract from Chapter 6. 'Stevenson's presentation of Dr. Jekyll allows the reader to feel sympathy for him.' Starting with this extract, explore how far you agree with this opinion. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2018</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2018">
+            <span>Extract from Chapter 4. Starting with this extract, explore how Stevenson creates mystery and tension in The Strange Case of Dr. Jekyll and Mr. Hyde. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2019</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2019">
+            <span>Extract from Chapter 8. Starting with this extract, explore how Stevenson presents Mr. Hyde as an inhuman and disturbing member of society. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2020</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2020">
+            <span>Extract from Chapter 10. Starting with this extract, explore how Stevenson presents ideas about how good and evil in The Strange Case of Dr. Jekyll and Mr. Hyde. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2021</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2021">
+            <span>Extract from Chapter 8. Starting with this extract, explore how Stevenson uses settings to create a disturbing and threatening atmosphere. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2022</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2022">
+            <span>Extract from Chapter 6. Starting with this extract, explore how Stevenson presents Dr. Jekyll as a mysterious character. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2023</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2023">
+            <span>Extract from Chapter 1. Starting with this extract, explore how far Stevenson presents Mr. Hyde as a threatening and dangerous character. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>2024</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-2024">
+            <span>Extract from Chapter 2. Starting with this extract, explore how Stevenson creates an atmosphere of fear and danger in The Strange Case of Dr. Jekyll and Mr. Hyde. [30 marks]</span>
+        </label>
+    </div>
+
+
+    <div class="question">
+        <h1>Specimen</h1>
+
+        <label>
+            <input type="checkbox" class="question-checkbox" id="jekyll-specimen">
+            <span>Extract from Chapter 2. Starting with this extract, how does Stevenson present Mr. Hyde as a frightening outsider? [30 marks]</span>
+        </label>
+    </div>
+
+</div>
+
+<script>
+    const checkboxes = document.querySelectorAll(".question-checkbox");
+    const progressFill = document.getElementById("progress-fill");
+    const progressText = document.getElementById("progress-text");
+
+    function updateProgress() {
+
+        let completed = 0;
+
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                completed++;
+            }
+        });
+
+        const total = checkboxes.length;
+        const percentage = (completed / total) * 100;
+
+        progressFill.style.width = percentage + "%";
+        progressText.textContent = `${completed} / ${total} completed`;
+    }
+
+
+    checkboxes.forEach(checkbox => {
+
+        // Load saved progress
+        const saved = localStorage.getItem(checkbox.id);
+
+        if (saved === "true") {
+            checkbox.checked = true;
+        }
+
+        // Save progress when clicked
+        checkbox.addEventListener("change", () => {
+
+            localStorage.setItem(
+                checkbox.id,
+                checkbox.checked
+            );
+
+            updateProgress();
+        });
+    });
+
+
+    // Update progress when page loads
+    updateProgress();
+</script>
+</body>
