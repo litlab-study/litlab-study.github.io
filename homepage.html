@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitLab</title>
+    <!-- Linking Google fonts for icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+        <!-- Linking SwiperJS CSS -->
+        <title>Power and Conflict</title>
+        <link rel="stylesheet" href="button.styles.css">
+        <link rel="stylesheet" href="PC.styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Welcome to LitLab</h1>
+    </div>
+    <div class="content">
+        
+<div class="parent2">
+    <div class="div6">
+        <h2>English literature paper 1 countdown:</h2>  
+    <div class ="clock" id="Lit1">
+        <div data-value="days"></div>
+        <div data-value="hours"></div>
+        <div data-value="mins"></div>
+    </div>
+
+    <h2>English literature paper 2 countdown:</h2>  
+    <div class ="clock" id="Lit2">
+        <div data-value="days"></div>
+        <div data-value="hours"></div>
+        <div data-value="mins"></div>
+    </div>
+    <script src="countdown.js"></script>
+    <script src = "init.js"></script>
+    
+    <p>
+    Explore the world of GCSE English with this comprehensive website. 
+    Here to make english revision accessible and manageable for all!
+    </p>
+    <p>
+    Here, you can find:
+    <br> - 'Complete the quote' flashcards
+    <br> - Quote banks organized by theme
+    <br> - Analysis of key themes and characters
+    <br> - Top-grade exemplar essays
+    <br> - Analysis tips
+    <br> - And much more!
+    </p>
+    <p>Please select what you would like to study today:</p>
+    </div>
+    <div class="div7">
+        <div class="literature-progress">
+    <h2>Past questions progress:</h2>
+
+    <div class="text-progress">
+        <h3>Macbeth</h3>
+        <p id="macbeth-progress">0 / 7 questions</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="macbeth-fill"></div>
+        </div>
+    </div>
+
+    <div class="text-progress">
+        <h3>Jekyll & Hyde</h3>
+        <p id="jekyll-progress">0 / 9 questions</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="jekyll-fill"></div>
+        </div>
+    </div>
+
+    <div class="text-progress">
+        <h3>Lord of the Flies</h3>
+        <p id="lotf-progress">0 / 12 questions</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="lotf-fill"></div>
+        </div>
+    </div>
+
+    <div class="text-progress">
+        <h3>Power and Conflict</h3>
+        <p id="PC-progress">0 / 7 questions</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="PC-fill"></div>
+        </div>
+    </div>
+
+    
+
+</div>
+    </div>
+    <div class="div8">
+        <div class="poems-container swiper">
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                    <a href="Macbeth.html" class="card-link">
+                        <img src="images\Mac.jpg" alt="Macbeth" class="card-image">
+                       <p class="badge ozy">William Shakespeare</p>
+                       <h2 class="card-title">Macbeth</h2>
+                       <button class="card-button">
+                       <span class="material-symbols-outlined">arrow_forward</span>
+                       </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="JekyllAndHyde.html" class="card-link">
+                        <img src="images\Hyde.jpg" alt="Jekyll and Hyde" class="card-image">
+                       <p class="badge emi">Robert Louis Stevenson</p>
+                       <h2 class="card-title">Jekyll and Hyde</h2>
+                       <button class="card-button">
+                       <span class="material-symbols-outlined">arrow_forward</span>
+                       </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="LordOfTheFlies.html" class="card-link">
+                        <img src="images\Flies.jpg" alt="Lord of the Flies" class="card-image">
+                       <p class="badge che">William Golding</p>
+                       <h2 class="card-title">Lord of the Flies</h2>
+                       <button class="card-button">
+                       <span class="material-symbols-outlined">arrow_forward</span>
+                       </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="PowerAndConflict.html" class="card-link">
+                        <img src="images\Poems.jpg" alt="Power and conflict" class="card-image">
+                       <p class="badge kam">--</p>
+                       <h2 class="card-title">Power and Conflict poetry</h2>
+                       <button class="card-button">
+                       <span class="material-symbols-outlined">arrow_forward</span>
+                       </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="EnglishAnalysisSkills.html" class="card-link">
+                        <img src="images\english.jpg" alt="English" class="card-image">
+                       <p class="badge kam">--</p>
+                       <h2 class="card-title">English analysis skills</h2>
+                       <button class="card-button">
+                       <span class="material-symbols-outlined">arrow_forward</span>
+                       </button>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+
+        </div>
+    </div>
+    </div>
+</div>
+                
+                    
+             
+
+    <!--Linking SwiperJS script-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script>
+
+function getProgress(prefix, total) {
+
+    let completed = 0;
+
+    for (let i = 0; i < localStorage.length; i++) {
+
+        const key = localStorage.key(i);
+
+        if (key && key.startsWith(prefix)) {
+
+            if (localStorage.getItem(key) === "true") {
+                completed++;
+            }
+
+        }
+    }
+
+    return completed;
+}
+
+
+// Macbeth
+const macbethCompleted = getProgress("macbeth-", 7);
+
+document.getElementById("macbeth-progress").textContent =
+    `${macbethCompleted} / 7 questions`;
+
+document.getElementById("macbeth-fill").style.width =
+    `${(macbethCompleted / 7) * 100}%`;
+
+
+// Jekyll & Hyde
+const jekyllCompleted = getProgress("jekyll-", 9);
+
+document.getElementById("jekyll-progress").textContent =
+    `${jekyllCompleted} / 9 questions`;
+
+document.getElementById("jekyll-fill").style.width =
+    `${(jekyllCompleted / 9) * 100}%`;
+
+
+// Lord of the Flies
+const lotfCompleted = getProgress("lotf-", 12);
+
+document.getElementById("lotf-progress").textContent =
+    `${lotfCompleted} / 12 questions`;
+
+document.getElementById("lotf-fill").style.width =
+    `${(lotfCompleted / 12) * 100}%`;
+
+const PCCompleted = getProgress("PC-", 7);
+
+document.getElementById("PC-progress").textContent =
+    `${PCCompleted} / 7 questions`;
+
+document.getElementById("PC-fill").style.width =
+    `${(PCCompleted / 7) * 100}%`;
+
+</script>
+</body>
+</html>
