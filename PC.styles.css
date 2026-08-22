@@ -91,7 +91,7 @@
     }
 
     .card-wrapper .swiper-slide-button {
-        display: none;
+        display: block;
     }
 }
 
