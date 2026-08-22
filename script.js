@@ -1,4 +1,4 @@
-new Swiper('.card-wrapper', {
+new Swiper('.poems-container', {
   loop: true,
   spaceBetween: 50,
 
