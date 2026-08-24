@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Flashcards</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- MAIN PAGE -->
+
+    <div class="container">
+
+        <div class="flashcards-container">
+
+            <h1>Your Flashcards ⭐</h1>
+
+            <p id="empty-message">
+                You don't have any flashcards yet!<br>
+                Click "Add Flashcard" to create your first one.
+            </p>
+
+            <!-- FLASHCARD -->
+
+            <div id="flashcard" class="flashcard hide">
+
+                <div class="front">
+                    <p id="question-display"></p>
+                </div>
+
+                <div class="back">
+                    <p id="answer-display"></p>
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <div class="flashcard-buttons">
+
+                <button id="prev-card">
+                    Previous
+                </button>
+
+                <button id="flip-card">
+                    Flip Flashcard
+                </button>
+
+                <button id="next-card">
+                    Next
+                </button>
+
+            </div>
+
+
+            <!-- EDIT / DELETE -->
+
+            <div id="card-management" class="hide">
+
+                <button id="edit-current" class="edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Edit
+                </button>
+
+                <button id="delete-current" class="delete">
+                    <i class="fa-solid fa-trash"></i>
+                    Delete
+                </button>
+
+            </div>
+
+
+            <!-- ADD -->
+
+            <div class="add-flashcard-container">
+
+                <button id="add-flashcard">
+                    Add Flashcard
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADD / EDIT WINDOW -->
+
+    <div class="question-container hide" id="add-question-card">
+
+        <h2>Add flashcard</h2>
+
+        <div class="wrapper">
+
+            <div class="error-container">
+
+                <span class="hide" id="error">
+                    Input fields cannot be empty
+                </span>
+
+            </div>
+
+            <i class="fa-solid fa-xmark" id="close-button"></i>
+
+        </div>
+
+
+        <label for="question">
+            Question:
+        </label>
+
+        <textarea
+            id="question"
+            class="input"
+            rows="2"
+            placeholder="Type the question here"></textarea>
+
+
+        <label for="answer">
+            Answer:
+        </label>
+
+        <textarea
+            id="answer"
+            class="input"
+            rows="2"
+            placeholder="Type the answer here"></textarea>
+
+
+        <button id="save-button">
+            Save
+        </button>
+
+    </div>
+
+
+    <script src="DIY_flashscript.js"></script>
+
+</body>
+
+</html>
