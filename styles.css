@@ -1,4 +1,4 @@
-body{
+body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
@@ -9,334 +9,29 @@ body{
     overflow-y: auto;
 }
 
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 90vw;
+    max-width: 1000px;
+    position: relative;
+    margin: 40px auto;
+}
+
 .flashcards-container {
     text-align: center;
     background: white;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    width: 90vw;
-    max-width:800px;
-    margin: 0 auto;
-}
-
-.flashcard {
-    width: 90%;
-    height: 180px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-    margin: 0 auto;
-}
-
-.flashcard.is-flipped {
-    transform: rotateY(180deg);
-}
-
-.flashcard div {
-    position: absolute;
     width: 100%;
-    height: 70%;
-    left: 0;
-    top: 0;
-
-    backface-visibility: hidden;
-    border-radius: 15px;
-    background: linear-gradient(135deg, white, lightgray);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
     box-sizing: border-box;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 1.1em;
-    text-align: center;
 }
-
-.back {
-    transform: rotateY(180deg);
-}
-
-button {
-    margin: 15px;
-    background-color: #a621d6;
-    color: white;
-    padding: 20px;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    }
-
-button:hover{
-    background-color: #d669f8;
-    }
-
-button:active {
-    transform: scale(0.95);
-    }
-
-.front,
-.back {
-    justify-content: center;
-    align-items: center;
-}
-
-.flashcard {
-    z-index: 1;
-}
-
-button {
-    position: relative;
-    z-index: 2;
-}
-
-.flashcard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container{
-    width:90vw;
-    max-width: 62.5em;
-    position: relative;
-    margin: auto;
-}
-
-.add-flashcard-container{
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.2em 1em;
-}
-
-.question-container{
-    width: 90vw;
-    max-width: 34em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: white;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    padding: 3em 2em;
-    border-radius: 5px;
-    box-shadow: 0 1em 2em black;
-}
-
-.wrapper{
-    display: grid;
-    grid-template-columns: 11fr 1fr;
-    gap: 1em;
-    margin-bottom: 1em;
-}
-
-.error-container {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#error{
-    color: red;
-    font-weight: 400;
-}
-
-.fa-xmark {
-    font-size: 1.4em;
-    background-color: red;
-    height: 1.8em;
-    width: 1.8em;
-    position: absolute;
-    top: 15px;
-    right:15px;
-    display: grid;
-    place-items: center;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    justify-self: flex-end;
-}
-
-label{
-    color: #a621d6;
-    font-weight: 600;
-    margin-bottom: 0.3em;
-}
-
-textarea{
-    width: 100%;
-    padding: 0.7em 0.5em;
-    border: 2px solid white;
-    outline: none;
-    color: #a621d6;
-    border-radius: 5px;
-    resize: none;
-
-}
-
-textarea:not(:last-child) {
-    margin-bottom: 1.2em;
-}
-
-textarea:focus {
-    border-color: #a621d6
-}
-
-.card-list-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.2em;
-    gap: 1.5rem;
-}
-
-.card {
-    width: 700px;
-    max-width: 90vw;
-
-    background: white;
-
-    border-radius: 20px;
-
-    padding: 25px;
-
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-
-    transition: transform 0.2s ease;
-}
-
-.card:hover{
-    transform: translateY(-4px);
-}
-
-#empty-message{
-    text-align:center;
-    color:white;
-    font-size:1.2rem;
-    margin-top:2rem;
-}
-
-.question-div{
-    margin-bottom: 0.5em;
-    font-weight: 500;
-    color: #a621d6
-}
-
-.answer-div{
-    margin-top: 1em;
-    font-weight: 400;
-    color: #a621d6;
-}
-
-.show-hide-btn{
-    display:block;
-    background-color: #a621d6;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 0.6em 0;
-    border-radius: 0.3em;
-}
-
-.button-con{
-    display:flex;
-    justify-content: flex-end;
-}
-
-.edit, 
-.delete{
-    background-color: transparent;
-    padding: 0.5em;
-    font-size: 16px;
-}
-
-.edit{
-    color: #a621d6;
-}
-
-.delete{
-    color: red;
-}
-
-.hide{
-    display: none;
-}
-
-@media sceen and(max-width: 800px){
-    .card-list-container{
-        grid-template-columns: 1fr 1fr;
-        gap: 0.8em;
-    }
-}
-
-@media sceen and(max-width: 450px){
-    body{
-        font-size: 14px;
-    }
-    .card-list0container{
-        grid-template-columns: 1fr;
-        gap: 1.2em;
-    }
-}
-
-.save-button{
-    margin: 15px;
-    background-color: #a621d6;
-    color: white;
-    padding: 20px;
-    border: none;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    }
-
-.flashcard-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.flashcard-buttons button {
-    margin: 10px;
-}
-
-#card-management {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-#card-management button {
-    padding: 10px 20px;
-    font-size: 14px;
-}
-
-#empty-message {
-    text-align: center;
-    color: white;
-    font-size: 1.1rem;
-    margin: 20px auto;
-    max-width: 500px;
-}
-
-#question-display,
-#answer-display {
-    max-width: 90%;
-    overflow-wrap: break-word;
-}
-
-/* =========================
-   DIY FLASHCARDS
-========================= */
 
 .flashcards-container h1 {
     text-align: center;
@@ -345,27 +40,32 @@ textarea:focus {
     color: #a621d6;
 }
 
+
+/* =========================
+   EMPTY MESSAGE
+========================= */
+
 #empty-message {
     text-align: center;
     color: #666;
+    font-size: 1.1rem;
     margin: 20px auto;
     line-height: 1.5;
+    max-width: 500px;
 }
 
 
-/* FLASHCARD */
+/* =========================
+   FLASHCARD
+========================= */
 
 .flashcard {
     width: 90%;
     max-width: 600px;
     height: 250px;
-
     margin: 30px auto;
-
     position: relative;
-
     transform-style: preserve-3d;
-
     transition: transform 0.6s;
 }
 
@@ -373,15 +73,11 @@ textarea:focus {
     transform: rotateY(180deg);
 }
 
-
 .flashcard .front,
 .flashcard .back {
-
     position: absolute;
-
     width: 100%;
     height: 100%;
-
     left: 0;
     top: 0;
 
@@ -396,146 +92,254 @@ textarea:focus {
     );
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
     padding: 30px;
-
     box-sizing: border-box;
 
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
     font-size: 1.2rem;
-
     text-align: center;
 }
-
 
 .flashcard .back {
     transform: rotateY(180deg);
 }
 
+#question-display,
+#answer-display {
+    max-width: 90%;
+    overflow-wrap: break-word;
+}
 
-/* MAIN BUTTONS */
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    margin: 10px;
+    background-color: #a621d6;
+    color: white;
+    padding: 15px 22px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        transform 0.2s;
+}
+
+button:hover {
+    background-color: #d669f8;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================
+   FLASHCARD NAVIGATION
+========================= */
 
 .flashcard-buttons {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 10px;
-
     flex-wrap: wrap;
-
     margin-top: 20px;
 }
 
-
 .flashcard-buttons button {
-
     margin: 5px;
+}
 
+.flashcard-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 
-/* EDIT / DELETE */
+/* =========================
+   EDIT / DELETE
+========================= */
 
 #card-management {
-
     display: flex;
-
     justify-content: center;
-
     gap: 10px;
-
     margin-top: 5px;
 }
 
-
 #card-management button {
-
     padding: 10px 18px;
-
     font-size: 14px;
-
 }
-
 
 #card-management .edit {
-
+    background-color: transparent;
     color: #a621d6;
-
 }
-
 
 #card-management .delete {
-
+    background-color: transparent;
     color: red;
-
 }
 
 
-/* ADD BUTTON */
+/* =========================
+   ADD FLASHCARD
+========================= */
 
 .add-flashcard-container {
-
     display: flex;
-
     justify-content: center;
-
     margin-top: 25px;
-
     padding: 0;
 }
 
-
 .add-flashcard-container button {
-
     margin: 0;
-
 }
 
 
-/* DISABLED NAVIGATION */
+/* =========================
+   ADD / EDIT WINDOW
+========================= */
 
-.flashcard-buttons button:disabled {
+.question-container {
+    width: 90vw;
+    max-width: 34em;
 
-    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    cursor: not-allowed;
+    background-color: white;
 
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+    padding: 3em 2em;
+
+    border-radius: 10px;
+
+    box-shadow: 0 1em 2em black;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#error {
+    color: red;
+    font-weight: 400;
+}
+
+.fa-xmark {
+    font-size: 1.4em;
+    background-color: red;
+    height: 1.8em;
+    width: 1.8em;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    display: grid;
+    place-items: center;
+
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+label {
+    color: #a621d6;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.7em 0.5em;
+
+    border: 2px solid #ddd;
+    outline: none;
+
+    color: #a621d6;
+
+    border-radius: 5px;
+
+    resize: none;
+
+    box-sizing: border-box;
+}
+
+textarea:not(:last-child) {
+    margin-bottom: 1.2em;
+}
+
+textarea:focus {
+    border-color: #a621d6;
 }
 
 
-/* MOBILE */
+/* =========================
+   HIDE ELEMENTS
+========================= */
+
+.hide {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media screen and (max-width: 600px) {
 
-    .flashcards-container {
-
-        padding: 25px 15px;
-
+    body {
+        align-items: flex-start;
     }
 
+    .container {
+        margin: 20px auto;
+    }
+
+    .flashcards-container {
+        padding: 25px 15px;
+    }
 
     .flashcard {
-
         width: 95%;
         height: 220px;
-
     }
-
 
     .flashcard-buttons {
-
         gap: 5px;
-
     }
 
+    .flashcard-buttons button {
+        margin: 4px;
+        padding: 12px 16px;
+    }
 }
 
